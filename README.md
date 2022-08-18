@@ -20,7 +20,7 @@ Introducción
 
     print("Bienvenido a Ahorcado por Daniel Queijeiro")
 
-¿escoger palabra aleatoria? (como se podría hacer para tener una colección de 5~ palabras para jugar)
+¿escoger palabra aleatoria? (como se podría hacer para tener una colección de 5~ palabras para jugar) (usar len para sacar numero de letras aunque aun falta convertirlos en _)
 Selección de la palabra aleatoria y presentarla al jugador
 
     var= palabra_random
