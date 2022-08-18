@@ -14,7 +14,7 @@ El objetivo de este proyecto es recrear este juego a través de codigo Python3 d
 
 
 # Algoritmos
-(necesita mucha revisión)
+(necesita mucha revisión) (Checar bool para aciertos/errores) (lista?)
 
 Introducción
 
