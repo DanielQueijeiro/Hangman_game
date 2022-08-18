@@ -29,7 +29,7 @@ Selección de la palabra aleatoria y presentarla al jugador
 
     print("La palabra es", var2 [numero_de_letras_palabra]) #(como representarlo como "_ _ _ _ _")#
 
-El jugador empieza a adivinar letras y el programa le informa si acierta o no
+El jugador empieza a adivinar letras y el programa le informa si acierta o no (slicing para mostrar las letras correctas)
 
     input(x) (jugador adivina una letra)
 
