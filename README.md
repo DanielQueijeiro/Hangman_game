@@ -14,51 +14,24 @@ El objetivo de este proyecto es recrear este juego a través de codigo Python3 d
 
 
 # Algoritmos
-(necesita mucha revisión) (Checar bool para aciertos/errores) (lista?)
+
 
 Introducción
 
     print("Bienvenido a Ahorcado por Daniel Queijeiro")
 
-¿escoger palabra aleatoria? (como se podría hacer para tener una colección de 5~ palabras para jugar) (usar len para sacar numero de letras aunque aun falta convertirlos en _)
 Selección de la palabra aleatoria y presentarla al jugador
 
-    var= palabra_random
+El jugador empieza a adivinar letras y el programa le informa si acierta o no (slicing para mostrar las letras correctas?)
 
-    var2 = int(numero_de_letras_palabra) # letras que contiene la palabra
-
-    print("La palabra es", var2 [numero_de_letras_palabra]) #(como representarlo como "_ _ _ _ _")#
-
-El jugador empieza a adivinar letras y el programa le informa si acierta o no (slicing para mostrar las letras correctas)
-
-    input(x) (jugador adivina una letra)
-
-    if "input(x)" = letra_palabra = añadir letra a palabra
-
-    print("Correcto, p _ _ _ _ ) #p solo es para ejemplar cuando se acierta la letra
-
-	  else if "input(x)" = letra_no_palabra = añadir error a cuenta
-  
-      print("Error, x _ _ _ _ _ , quedan 5 intentos")
       
-Se repite el proceso de adivinanza (como hacer para que el programa cheque si esta bien o mal)
+Se repite el proceso de adivinanza 
 
-      input(x) = letra_palabra = añadir letra a palabra (jugador adivina una letra) #sigue el juego
+     
 
 El programa detecta cuando la palabra este completa y termina el juego
 
-    if letra_palabra = palabra completa
-
-    print("Ganaste, la palabra era", var) #var=pizza solo es ejemplo de cuando se adivina toda la palabra
-
-    Terminar
+ 
 
  El jugador ha alcanzado su limite de errores y pierde
  
-	else if "input(x)" = letra_no_palabra = añadir error a cuenta
-  
-	if letra_no_palabra = 6° error
-  
-	print("Perdiste, la palabra era", var) #el jugador pierde
-  
-	Terminar
