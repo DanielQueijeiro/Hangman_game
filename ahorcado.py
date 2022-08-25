@@ -13,7 +13,7 @@ print("Al alcanzar 6 errores, pierdes")
 #print(palabra)
 #set errores a 0
 e = 1
-#adivinar y suma de errores (7 intentos)
+#adivinar y suma de errores (6 intentos)
 l = len(palabra)
 while e < 7:
     print("Escriba una letra para adivinar")
