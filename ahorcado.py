@@ -2,10 +2,12 @@ import random
 from time import sleep
 
 
-#inicio del juego
-print("Bienvenido a Ahorcado, hecho por Daniel Queijeiro")
-sleep(1)
+#bienvenida al juego
+def bienvenida_juego():
+    print("Bienvenido a Ahorcado, hecho por Daniel Queijeiro")
+    sleep(1)
 
+bienvenida_juego()
 #lista de palabras
 lista = ["tarjeta", "pepinillo", "bocina", "codigo", "profesional"]
 palabra = lista[random.randint(0,4)]
