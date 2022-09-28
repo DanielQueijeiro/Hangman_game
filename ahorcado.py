@@ -18,7 +18,7 @@ tablero=len(diccionario)*"_"
 palabra = list(tablero)
 
 #mostrar cuantas letras tiene su palabra
-print("Su palabra contiene", "_" * len(diccionario), len(diccionario), " letras")
+print("Su palabra contiene", "_ " * len(diccionario), len(diccionario), " letras")
 
 print("Al alcanzar 6 errores, pierdes")
 
@@ -40,7 +40,7 @@ while e < 6:
             print("Correcto, la palabra es:", palabra, "\n")
         elif intento not in palabra:
                 letras_incorrectas.append(intento)
-                print(f"Incorrecto, tiene {e} error/es \n")
+                print(f"Incorrecto, tiene {e+1} error/es \n")
                 e = e + 1
         print("Letras erroneas: ", letras_incorrectas)
         if palabra == diccionario2:#ganar///como checar que la palabra ya este completa y proceder a ganar
