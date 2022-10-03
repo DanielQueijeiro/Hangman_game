@@ -8,47 +8,49 @@ def bienvenida_juego():
 
 
 bienvenida_juego()
-#lista de palabras
-lista = ["compra", "juego", "codigo", "python", "pescado"]
-diccionario = lista[random.randint(0,4)]
-diccionario2= list(diccionario)
-letras_correctas=[]
-letras_incorrectas=[]
-tablero=len(diccionario)*"_"
-palabra = list(tablero)
+#lista de palabras importada de un bloc de notas
+with open("diccionario.txt", encoding="utf-8") as diccionario:
+    palabras=diccionario.read()
+palabra_aleatoria=palabras.split("\n")
+
+
+
+#se selecciona una palabra aleatoria y se prepara para el juego
+palabra_oculta = palabra_aleatoria[random.randint(0,29)]
+palabra_oculta_tablero= list(palabra_oculta)
+letras_correctas= " "
+letras_incorrectas = " "
+palabra=len(palabra_oculta)*"_"
 
 #mostrar cuantas letras tiene su palabra
-print("Su palabra contiene", "_ " * len(diccionario), len(diccionario), " letras")
+print("Su palabra contiene", "_" * len(palabra_oculta), len(palabra_oculta), " letras")
 
-print("Al alcanzar 6 errores, pierdes")
-
+print("Al alcanzar 8 errores, pierdes")
 #set errores a 0
 e = 0
 
-#adivinar y suma de errores (6 intentos)
-while e < 6:
+#adivinar y suma de errores (8 intentos)
+while e < 8:
     intento = str((input("Escriba una letra para adivinar:  ")))
     print("----------------------------------------------------------------")
-    if "a" <= intento <="z" and len(intento) ==1:
-        if intento in diccionario2:
-            for index, value in enumerate(diccionario2):
-                if value == intento:
-                    palabra[index] = intento
-                if value != intento:
-                    palabra[index] = "_"
-            letras_correctas.append(intento)
+    if "a" <= intento <="z" and len(intento) ==1:#comprobar que el jugador intruduzca una letra valida
+        if intento in palabra_oculta:
+            letras_correctas = letras_correctas + intento
+            for i in range(len(palabra_oculta)): #completar los espacios vacíos con las letras adivinadas
+                if palabra_oculta[i] in letras_correctas:
+                    palabra = palabra[:i] + palabra_oculta[i] + palabra[i+1:]
             print("Correcto, la palabra es:", palabra, "\n")
-        elif intento not in palabra:
-                letras_incorrectas.append(intento)
-                print(f"Incorrecto, tiene {e+1} error/es \n")
-                e = e + 1
+        elif intento not in palabra:#agregar letra erronea a lista
+            e = e + 1
+            letras_incorrectas = letras_incorrectas + intento + " "
+            print(f"Incorrecto, tiene {e} error/es \nLa palabra es:", palabra, "\n ")
         print("Letras erroneas: ", letras_incorrectas)
-        if palabra == diccionario2:#ganar///como checar que la palabra ya este completa y proceder a ganar
-            print("Correcto, la palabra es:", diccionario)
+        if palabra == palabra_oculta:#ganar
+            print("Ganaste!, la palabra era:", palabra_oculta)
             quit()
     else:
             print("No es un carácter válido")
         
 #perder
-    if e == 6:
-        print("Has alcanzado el maximo número de errores, perdiste")
+    if e == 8:
+        print("Has alcanzado el maximo número de errores, perdiste \nLa palabra era:",palabra_oculta)
