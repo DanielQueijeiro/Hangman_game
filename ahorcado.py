@@ -12,9 +12,10 @@ def bienvenida_juego():
 bienvenida_juego()
 
 # Establecer palabras con dificultades a traves de una matriz
-palabra_aleatoria=[["compra", "juego", "patata", "python", "virus"],
-                     ["pescado", "conducta", "terapia", "troyano", "rebasar"],
-                     ["procedimiento", "eternidad", "hospital", "circular", "espectador"]]
+facil=["compra", "juego", "patata", "python", "virus"]
+intermedio=["pescado", "conducta", "terapia", "troyano", "rebasar"]
+dificil=["procedimiento", "eternidad", "hospital", "circular", "espectador"]
+palabra_aleatoria=[facil,intermedio,dificil]
 
 
 # se selecciona una palabra aleatoria y se prepara para el juego
