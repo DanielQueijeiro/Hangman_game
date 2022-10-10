@@ -1,30 +1,42 @@
 import random
+from time import sleep
 
 # bienvenida al juego
 
 
 def bienvenida_juego():
     print("----------------------------------------------------------------")
-    print("\n" "Bienvenido a Ahorcado, hecho por Daniel Queijeiro" "\n")
+    print("\n" "Bienvenido a Ahorcado, hecho por Daniel Queijeiro\n"  """+---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========""")
     print("----------------------------------------------------------------")
+    sleep(1.5)
 
 
 bienvenida_juego()
 
 # Establecer palabras con dificultades a traves de una matriz
-facil=["compra", "juego", "patata", "python", "virus"]
-intermedio=["pescado", "conducta", "terapia", "troyano", "rebasar"]
-dificil=["procedimiento", "eternidad", "hospital", "circular", "espectador"]
-palabra_aleatoria=[facil,intermedio,dificil]
+facil = ["compra", "juego", "patata", "python", "virus"]
+intermedio = ["pescado", "conducta", "terapia", "troyano", "rebasar"]
+dificil = ["procedimiento", "eternidad", "hospital", "circular", "espectador"]
+palabra_aleatoria = [facil, intermedio, dificil]
 
 
 # se selecciona una palabra aleatoria y se prepara para el juego
-palabra_oculta=palabra_aleatoria[int(input("""Introduzca la dificultad que desee\n0=Facil\n1=Intermedio\n2=Dificil\n"""))][random.randint(0, 4)] 
-
-palabra_oculta_tablero=list(palabra_oculta)
-letras_correctas=" "
-letras_incorrectas=" "
-palabra=len(palabra_oculta) * "_"
+palabra_oculta = palabra_aleatoria[int(input("""Introduzca la dificultad que desee
+0=Facil
+1=Intermedio
+2=Dificil
+"""))][random.randint(0, 4)]
+print("----------------------------------------------------------------")
+palabra_oculta_tablero = list(palabra_oculta)
+letras_correctas = " "
+letras_incorrectas = " "
+palabra = len(palabra_oculta) * "_"
 
 # mostrar cuantas letras tiene su palabra
 print("Su palabra contiene", "_" * len(palabra_oculta),
@@ -36,7 +48,7 @@ e = 0
 
 # adivinar y suma de errores (10 intentos)
 while e < 10:
-    intento=str((input("Escriba una letra para adivinar:  ")))
+    intento = str((input("Escriba una letra para adivinar:  ")))
     print("----------------------------------------------------------------")
     # comprobar que el jugador intruduzca una letra valida
     if "a" <= intento <= "z" and len(intento) == 1:
@@ -45,7 +57,7 @@ while e < 10:
             # completar los espacios vacíos con las letras adivinadas
             for i in range(len(palabra_oculta)):
                 if palabra_oculta[i] in letras_correctas:
-                    palabra=palabra[:i] + palabra_oculta[i] + palabra[i+1:]
+                    palabra = palabra[:i] + palabra_oculta[i] + palabra[i+1:]
             print("Correcto, la palabra es:", palabra, "\n")
         elif intento not in palabra:  # agregar letra erronea a lista
             e = e + 1
@@ -61,4 +73,15 @@ while e < 10:
 
 # perder
     if e == 10:
-        print("Has alcanzado el maximo número de errores, perdiste \nLa palabra era:", palabra_oculta)
+        sleep(1)
+        print("""\n----------------------------------------------------------------
+Has alcanzado el maximo número de errores, perdiste. \nLa palabra era:""", palabra_oculta,
+              """
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+========
+----------------------------------------------------------------""")
