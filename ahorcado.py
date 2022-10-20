@@ -6,11 +6,12 @@ from time import sleep
 
 def bienvenida_juego():
     print("----------------------------------------------------------------")
-    print("\n" "Bienvenido a Ahorcado, hecho por Daniel Queijeiro\n"  """+---+
+    print("""\n" "Bienvenido a Ahorcado, hecho por Daniel Queijeiro
+  +---+
   |   |
-  O   |
- /|\  |
- / \  |
+      |
+      |
+      |
       |
 =========""")
     print("----------------------------------------------------------------")
@@ -27,7 +28,8 @@ palabra_aleatoria = [facil, intermedio, dificil]
 
 
 # se selecciona una palabra aleatoria y se prepara para el juego
-palabra_oculta = palabra_aleatoria[int(input("""Introduzca la dificultad que desee
+palabra_oculta = palabra_aleatoria[int(input(
+    """Introduzca la dificultad que desee
 0=Facil
 1=Intermedio
 2=Dificil
@@ -41,7 +43,7 @@ palabra = len(palabra_oculta) * "_"
 # mostrar cuantas letras tiene su palabra
 print("Su palabra contiene", "_" * len(palabra_oculta),
       len(palabra_oculta), " letras")
-
+      
 print("Al alcanzar 10 errores, pierdes")
 # set errores a 0
 e = 0
@@ -57,16 +59,18 @@ while e < 10:
             # completar los espacios vacíos con las letras adivinadas
             for i in range(len(palabra_oculta)):
                 if palabra_oculta[i] in letras_correctas:
-                    palabra = palabra[:i] + palabra_oculta[i] + palabra[i+1:]
+                    palabra = palabra[:i] + palabra_oculta[i] + palabra[i + 1:]
             print("Correcto, la palabra es:", palabra, "\n")
         elif intento not in palabra:  # agregar letra erronea a lista
             e = e + 1
             letras_incorrectas = letras_incorrectas + intento + " "
             print(
-                f"Incorrecto, tiene {e} error/es \nLa palabra es:", palabra, "\n ")
+                f"Incorrecto, tiene {e} error/es \nLa palabra es:",
+                palabra,
+                "\n ")
         print("Letras erroneas: ", letras_incorrectas)
         if palabra == palabra_oculta:  # ganar
-            print("Ganaste!, la palabra era:", palabra_oculta)
+            print("Ganaste! a palabra era:", palabra_oculta)
             quit()
     else:
         print("No es un carácter válido")
@@ -75,7 +79,8 @@ while e < 10:
     if e == 10:
         sleep(1)
         print("""\n----------------------------------------------------------------
-Has alcanzado el maximo número de errores, perdiste. \nLa palabra era:""", palabra_oculta,
+Has alcanzado el maximo número de errores, perdiste.
+La palabra era:""", palabra_oculta,
               """
   +---+
   |   |
