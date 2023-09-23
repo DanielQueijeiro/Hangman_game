@@ -1,37 +1,36 @@
-# Ahorcado
-###### Contexto
-El ahorcado es un juego de adivinanzas de lápiz y papel para dos o más jugadores. Un jugador piensa en una palabra, frase u oración y el otro trata de adivinarla según lo que sugiere por letras o dentro de un cierto número de oportunidades.
-Usando una fila de guiones, se representa la palabra a adivinar, dando el número de letras. Si el jugador adivinador sugiere una letra o número que aparece en la palabra, el otro jugador la escribe en todas sus posiciones correctas. Si la letra o el número sugerido no ocurre en la palabra, el otro jugador saca un elemento de la figura de hombre palo ahorcado como una marca de conteo. El juego termina cuando:
-- El jugador adivinador completa la palabra, o adivina la palabra completa correctamente
-- El otro jugador completa el diagrama
-###### Ejemplo
+# Hangman
+###### Background
+Hangman is a pencil and paper guessing game for two or more players. One player thinks of a word, phrase or sentence and the other tries to guess it as suggested by letters or within a certain number of chances.
+Using a row of dashes, the word to be guessed is represented, giving the number of letters. If the guessing player suggests a letter or number that appears in the word, the other player writes it in all its correct positions. If the suggested letter or number does not occur in the word, the other player draws an element of the hanged stick man figure as a tally mark. The game ends when:
+- The guessing player completes the word, or guesses the complete word correctly.
+- The other player completes the drawing
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Hangman.svg/100px-Hangman.svg.png)
 
-El origen de este juego es incierto, pero a pesar de su pasado poco conocido, es uno de los juegos que probablemente todo el mundo conoce y esta familiarizado con el.
-Es un juego sencillo de jugar y resulta entretenido.
+The origin of this game is uncertain, but despite its little known past, it is one of the games that probably everyone knows and is familiar with.
+It is a simple game to play and it is entertaining.
 
-El objetivo de este proyecto es recrear este juego a través de codigo Python3 de forma que el codigo le otorgue una palabra aleatoria al jugador y lleve la cuenta de los errores que el jugador vaya cometiendo.
-
-
-# Algoritmos
+The goal of this project is to recreate this game through Python3 code so that the code gives a random word to the player and keeps track of the mistakes the player makes.
 
 
-Introducción
+# Algorithms
 
-    print("Bienvenido a Ahorcado por Daniel Queijeiro")
 
-Selección de la palabra aleatoria y presentarla al jugador
+Introduction
 
-El jugador empieza a adivinar letras y el programa le informa si acierta o no (slicing para mostrar las letras correctas?)
+    print("Welcome to Hangman by Daniel Queijeiro")
+
+Selection of the random word and presenting it to the player.
+
+The player starts guessing letters and the program informs him if he guesses right or wrong (slicing to show the correct letters?)
 
       
-Se repite el proceso de adivinanza 
+The guessing process is repeated 
 
      
 
-El programa detecta cuando la palabra este completa y termina el juego
+The program detects when the word is complete and ends the game.
 
  
 
- El jugador ha alcanzado su limite de errores y pierde
+ The player has reached his error limit and loses.
  
